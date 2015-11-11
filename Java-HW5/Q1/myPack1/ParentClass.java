@@ -4,8 +4,10 @@ public class ParentClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		protected int protInt =7l;
-		System.out.println("Hi");
+		protected int protInt = 7;
 	}
 
 }
+
+// Notes:
+// Protected int variables can be accessed within the same class, any class in the same pack, and any subclass in a different pack
