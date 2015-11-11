@@ -1,3 +1,4 @@
+package myPack;
 
 public class Q1 {
 
