@@ -4,9 +4,9 @@ public class Q1Driver extends ChildClass{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Q1Driver driverObj = new Q1Driver();
+		Q1Driver drObj = new Q1Driver();
 		
-		System.out.println(driverObj.protInt);
+		System.out.println(drObj.protInt);
 	}
 
 }
