@@ -1,0 +1,14 @@
+// OUTPUT
+/********
+Microsoft Windows [Version 10.0.10240]
+(c) 2015 Microsoft Corporation. All rights reserved.
+ 
+C:\Users\V>cd Desktop
+ 
+C:\Users\V\Desktop>javac Question4.java
+ 
+C:\Users\V\Desktop>java Question4
+I am free of the loop!
+ 
+C:\Users\V\Desktop>
+*********/ 
