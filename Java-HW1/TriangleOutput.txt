@@ -1,0 +1,17 @@
+C:\Users\V\Desktop>javac Triangle.java
+ 
+C:\Users\V\Desktop>java Triangle
+Enter 12 numbers:
+1
+2
+3
+4
+5
+6
+7
+8
+76
+65
+4
+3
+This is a real triangle

@@ -1,0 +1,33 @@
+Microsoft Windows [Version 10.0.10240]
+(c) 2015 Microsoft Corporation. All rights reserved.
+ 
+C:\Users\V>javac redirection.java
+ 
+C:\Users\V>java Redirection
+er
+er2
+23
+34
+45
+56
+67
+7
+ 
+10
+1010
+1010
+10^Z
+ 
+C:\Users\V>java Redirection
+0
+0
+1
+1
+2
+2
+7
+7
+ 
+^Z
+ 
+C:\Users\V>

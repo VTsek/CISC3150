@@ -1,0 +1,32 @@
+Microsoft Windows [Version 10.0.10240]
+(c) 2015 Microsoft Corporation. All rights reserved.
+ 
+C:\Users\V>javac Month.java
+ 
+C:\Users\V>java Month
+Oct
+ 
+C:\Users\V>java Month
+Sept
+C:\Users\V>java Month
+Aug
+C:\Users\V>java Month
+Feb
+C:\Users\V>java Month
+Apr
+C:\Users\V>java Month
+Sept
+C:\Users\V>java Month
+Sept
+C:\Users\V>java Month
+July
+C:\Users\V>java Month
+May
+C:\Users\V>java Month
+Aug
+C:\Users\V>java Month
+Mar
+C:\Users\V>java Month
+Nov
+ 
+C:\Users\V>

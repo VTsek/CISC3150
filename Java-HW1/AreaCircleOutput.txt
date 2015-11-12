@@ -1,0 +1,29 @@
+Microsoft Windows [Version 10.0.10240]
+(c) 2015 Microsoft Corporation. All rights reserved.
+ 
+C:\Users\V>javac AreaCircle.java
+ 
+C:\Users\V>java AreaCircle
+Enter in a value for the radius: 2
+The value of the area is 12.566370614359172
+Enter in a value for the radius: 3
+The value of the area is 28.274333882308138
+Enter in a value for the radius: 4
+The value of the area is 50.26548245743669
+Enter in a value for the radius: 2
+The value of the area is 12.566370614359172
+Enter in a value for the radius: 6
+The value of the area is 113.09733552923255
+Enter in a value for the radius: 5
+The value of the area is 78.53981633974483
+Enter in a value for the radius: 4
+The value of the area is 50.26548245743669
+Enter in a value for the radius: ^Z
+Exception in thread "main" java.util.NoSuchElementException
+        at java.util.Scanner.throwFor(Unknown Source)
+        at java.util.Scanner.next(Unknown Source)
+        at java.util.Scanner.nextInt(Unknown Source)
+        at java.util.Scanner.nextInt(Unknown Source)
+        at AreaCircle.main(AreaCircle.java:21)
+ 
+C:\Users\V>
