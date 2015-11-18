@@ -1,9 +1,6 @@
 Disclaimer:
 
-I'm learning how to commit and push Eclipse files to GitHub. 
-
-During the process, I managed to run into error code 1D-10-T and managed to
-overwrite all my homework files with blank folders, and had a backup version in my email.
+While learning how to commit and push Eclipse files to GitHub, I overwrote my homework files with blank folders, but had some backup versions saved.
 
 Please be patient as I'm in the process of double checking and updating my homework files.
 
