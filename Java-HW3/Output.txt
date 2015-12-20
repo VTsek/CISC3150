@@ -1,0 +1,33 @@
+Enter Number of Queens: 6
+Possible Placement 1
+ *  Q  *  *  *  * 
+ *  *  *  Q  *  * 
+ *  *  *  *  *  Q 
+ Q  *  *  *  *  * 
+ *  *  Q  *  *  * 
+ *  *  *  *  Q  * 
+
+Possible Placement 2
+ *  *  Q  *  *  * 
+ *  *  *  *  *  Q 
+ *  Q  *  *  *  * 
+ *  *  *  *  Q  * 
+ Q  *  *  *  *  * 
+ *  *  *  Q  *  * 
+
+Possible Placement 3
+ *  *  *  Q  *  * 
+ Q  *  *  *  *  * 
+ *  *  *  *  Q  * 
+ *  Q  *  *  *  * 
+ *  *  *  *  *  Q 
+ *  *  Q  *  *  * 
+
+Possible Placement 4
+ *  *  *  *  Q  * 
+ *  *  Q  *  *  * 
+ Q  *  *  *  *  * 
+ *  *  *  *  *  Q 
+ *  *  *  Q  *  * 
+ *  Q  *  *  *  * 
+
