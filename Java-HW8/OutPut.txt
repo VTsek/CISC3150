@@ -1,0 +1,20 @@
+At Sun Dec 20 13:21:47 EST 2015 Client B Said: Hi
+At Sun Dec 20 13:21:47 EST 2015 Client B Said: Hey
+At Sun Dec 20 13:21:47 EST 2015 Client B Said: Ohhh..
+At Sun Dec 20 13:21:48 EST 2015 Client B Said: How are you?
+At Sun Dec 20 13:21:48 EST 2015 Client B Said: Fine
+At Sun Dec 20 13:21:49 EST 2015 Client B Recieved: Hi
+At Sun Dec 20 13:21:49 EST 2015 Client B Recieved: Hey
+At Sun Dec 20 13:21:49 EST 2015 Client B Recieved: Ohhh..
+At Sun Dec 20 13:21:49 EST 2015 Client B Recieved: How are you?
+At Sun Dec 20 13:21:49 EST 2015 Client B Recieved: Fine
+At Sun Dec 20 13:21:49 EST 2015 Client B Said: Ahh
+At Sun Dec 20 13:21:49 EST 2015 Client B Said: What's up
+At Sun Dec 20 13:21:50 EST 2015 Client B Recieved: What's up
+At Sun Dec 20 13:21:51 EST 2015 Client B Recieved: Ahh
+At Sun Dec 20 13:21:51 EST 2015 Client B Said: What is going..
+At Sun Dec 20 13:21:53 EST 2015 Client B Recieved: What is going..
+At Sun Dec 20 13:21:53 EST 2015 Client B Said: Fine
+At Sun Dec 20 13:21:55 EST 2015 Client B Recieved: Fine
+At Sun Dec 20 13:21:55 EST 2015 Client B Said: Nothing..
+At Sun Dec 20 13:21:57 EST 2015 Client B Recieved: Nothing..
