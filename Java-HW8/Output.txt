@@ -1,7 +1,0 @@
-//Output
-
-Enter 1 to start Server
-Enter 2 for Client A
-Enter 3 for Client B
-
-Yours option:

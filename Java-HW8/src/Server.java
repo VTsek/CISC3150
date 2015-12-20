@@ -1,130 +1,96 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
+import java.util.Date;
 
 public class Server {
 
-	private ServerSocket server;
-	private Socket connection;
-	private BufferedReader[] br = new BufferedReader[2];
-	private PrintStream[] ps = new PrintStream[2];
+	public static PipedInputStream pisSB, pisSA;
+    public static PipedOutputStream posSB, posSA;
+    private ClientB client1;
+    private ClientA client2;
+    private DataInputStream dsA,dsB;
+    private DataOutputStream douA,douB;
 	
 	public Server(){
-		
-		startServer();
-		
-	}
+
+		pisSA = new PipedInputStream();
+		posSA = new PipedOutputStream();
+		pisSB = new PipedInputStream();
+		posSB = new PipedOutputStream();
 	
-	public void startServer(){
+		dsB = new DataInputStream(pisSB);
+		douB = new DataOutputStream(posSB);
+		dsA = new DataInputStream(pisSA);
+		douA = new DataOutputStream(posSA);
+		
+		client1 = new ClientB();
+		client2 = new ClientA();
 		
 		try{
 			
-			Thread thread = new Thread(){
-				
+			posSA.connect(client2.pisA);
+			client2.posA.connect(pisSA);
+			
+			posSB.connect(client1.pisB);
+			client1.posB.connect(pisSB);
+			
+		}catch(Exception e){e.printStackTrace();}
+		
+		Piping();
+		
+	}
+	
+	public void Piping(){
+		
+		try{
+			
+			Thread thread = new Thread(new Runnable(){
+
 				@Override
-				public void run(){
+				public void run() {
 					
-					try{
+					while(true){
 						
-						server = new ServerSocket(1996);
+						try{
+							
+							douA.writeUTF(dsB.readUTF());
+							
+						}catch(Exception e){}
 						
-						connection = server.accept();
-						streams(0);
-						System.out.println("First Client is connected..");
-						connection = server.accept();
-						streams(1);
-						System.out.println("Second Client is connected..");
-						
-					}catch(Exception e){e.printStackTrace();}
+					}
 					
 				}
 				
-			};
+			});
 			thread.start();
-			
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		
-	}
-	
-	public void streams(int index){
-		
-		try{
-			
-			br[index] = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-			ps[index] = new PrintStream(connection.getOutputStream());
-			
-			startProcessing(index);
 			
 		}catch(Exception e){}
 		
-	}
-	
-	public void startProcessing(int index){
-		
 		try{
 			
-			if(index == 0){
-				
-				Thread thread1 = new Thread(new Runnable(){
+			Thread thread = new Thread(new Runnable(){
 
-					@Override
-					public void run() {
+				@Override
+				public void run() {
+					
+					while(true){
 						
-						while(true){
+						try{
 							
-							try{
-								
-								String message = br[0].readLine().toString();
-								ps[1].println(message);
-								ps[1].flush();
-								
-							}catch(Exception e){
-								
-							}
+							douB.writeUTF(dsA.readUTF());
 							
-						}
+						}catch(Exception e){}
 						
 					}
 					
-				});
+				}
 				
-				thread1.start();
-				
-			}else{
-				
-				Thread thread2 = new Thread(new Runnable(){
-
-					@Override
-					public void run() {
-						
-						while(true){
-							
-							try{
-								
-								String message = br[1].readLine().toString();
-								ps[0].println(message);
-								ps[0].flush();
-								
-							}catch(Exception e){
-								
-							}
-							
-						}
-						
-					}
-					
-				});
-				thread2.start();
-				
-			}
-
-		}catch(Exception e){
-		
-		}
+			});
+			thread.start();
+			
+		}catch(Exception e){}
 		
 	}
 	

@@ -1,42 +1,27 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.net.Socket;
-import java.util.Calendar;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
 import java.util.Date;
 import java.util.Scanner;
 
 public class ClientA {
 
-	private Socket connection;
-	public BufferedReader br;
-	public PrintStream ps;
-	private Scanner scan;
+	public static PipedInputStream pisA;
+    public static PipedOutputStream posA;
+    private DataInputStream ds;
+    private DataOutputStream dou;
+    private Scanner scan;
 	
-	public ClientA(String ip){
+	public ClientA(){
 		
-		try{
-			
-			connection = new Socket(ip, 1996);
-			streams();
-			
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+		pisA = new PipedInputStream();
+		posA = new PipedOutputStream();
 		
-	}
-	
-	private void streams(){
+		ds = new DataInputStream(pisA);
+		dou = new DataOutputStream(posA);
 		
-		try{
-			
-			br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-			ps = new PrintStream(connection.getOutputStream());
-			
-			startChatting();
-			
-			
-		}catch(Exception e){}
+		startChatting();
 		
 	}
 	
@@ -53,9 +38,9 @@ public class ClientA {
 						
 						try{
 							
-							String text = br.readLine().toString();
+							String cText = ds.readUTF();
 							Date date = new Date();
-							System.out.println("At "+date.toString()+" Client A Recieved: "+text);
+							System.out.println("At "+date.toString()+" Client B Recieved: "+cText);
 							
 						}catch(Exception e){}
 						
@@ -77,18 +62,23 @@ public class ClientA {
 				@Override
 				public void run() {
 					
-					while(true){
-						
 						try{
-							String text = scan.nextLine();
-							Date date = new Date();
-							System.out.println("At "+date.toString()+" Client A Said: "+text);
-							ps.println(text);
-							ps.flush();
+							
+							String[] messages = {"Hi","Ohhh..","How are you?","Fine","What's up"};
+							
+							for(int i = 0; i < messages.length; i++){
+								
+								String text = messages[i];
+								Date date = new Date();
+								System.out.println("At "+date.toString()+" Client B Said: "+text);
+								dou.writeUTF(text);
+								
+								Thread.sleep(500);
+								
+							}
+							
 						}catch(Exception e){}
 						
-					}
-					
 				}
 				
 			});
